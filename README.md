@@ -1,4 +1,4 @@
-# Sound Detector
+# Real time sound classifier
 
 A full-stack environmental sound classification system that listens through the browser, records audio snippets, and uses a machine learning model to identify sounds such as **door knocks**, **water boiling**, **cat meows**, and **dog barks**.
 
