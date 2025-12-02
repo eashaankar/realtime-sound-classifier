@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sound Detector</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-container">
+    <h1>Sound Detector</h1>
+    <p class="subtitle">
+      Prototype website – listens with your microphone and uses a backend ML model to detect sounds.
+    </p>
+
+    <div class="controls">
+      <button id="startBtn">Start Listening</button>
+      <button id="stopBtn" disabled>Stop Listening</button>
+    </div>
+
+    <div class="status-panel">
+      <p>Status: <span id="status">Idle</span></p>
+      <p>Last detection: <span id="detected">None</span></p>
+      <p>Input level:</p>
+      <div class="level-meter">
+        <div id="levelBar" class="level-bar"></div>
+      </div>
+    </div>
+
+    <!-- Optional: live class indicators for highlighting from app.js -->
+    <div class="class-panel">
+      <h2>Detected classes</h2>
+      <ul id="classList">
+        <li data-class="baby_cry">Baby cry</li>
+        <li data-class="boiling_water">Boiling water</li>
+        <li data-class="door_knock">Door knock</li>
+        <li data-class="cat_meow">Cat meow</li>
+        <li data-class="background">Background (no event)</li>
+        <li data-class="dog_bark">Dog bark</li>
+      </ul>
+    </div>
+
+    <div class="notes">
+      <h2>How this works</h2>
+      <ul>
+        <li>Requests access to your microphone when you press <strong>Start Listening</strong>.</li>
+        <li>Records a short (~5 second) audio snippet.</li>
+        <li>Uploads that snippet to the backend Flask API at <code>/predict</code>.</li>
+        <li>
+          The backend uses VGGish + a classifier to predict one of:
+          <em>baby_cry</em>, <em>boiling_water</em>, <em>door_knock</em>,
+          <em>cat_meow</em>, <em>background</em>, or <em>dog_bark</em>.
+        </li>
+        <li>Plays a “ding” when any sound other than <em>background</em> is detected.</li>
+      </ul>
+    </div>
+  </div>
+
+  <audio id="ding" src="ding-sound.wav" preload="auto"></audio>
+
+  <script src="app.js"></script>
+</body>
+</html>
