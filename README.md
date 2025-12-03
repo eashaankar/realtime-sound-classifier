@@ -17,5 +17,20 @@ This repository includes:
 - Uploads audio to backend for classification  
 - Shows predicted label + confidence  
 - Optional “ding” alert for detected events  
-- Works with your own custom dataset  
+- Works with your own custom dataset
+
+## Author
+<a href="https://github.com/eashaankar">
+  <img src="https://github.com/eashaankar.png" width="80" height="80" style="border-radius:50%" />
+</a>
+
+**Eashaankar Sahai**  
+GitHub: https://github.com/eashaankar
+
+<a href="https://github.com/lyndialin">
+  <img src="https://github.com/lyndialin.png" width="80" height="80" style="border-radius:50%" />
+</a>
+
+**Lyndia Lin**  
+GitHub: https://github.com/lyndialin
 
